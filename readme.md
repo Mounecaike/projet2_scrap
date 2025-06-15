@@ -76,7 +76,6 @@ Les images seront téléchargées dans le dossier `images/`
 ```
 📦 projet/
 ├── main.py                  # Point d’entrée principal
-├── demo_etl.py              # Démo du pipeline ETL (optionnel)
 ├── scraper/
 │   ├── __init__.py
 │   ├── all_scraper.py       # Fonction all_category()
