@@ -5,13 +5,16 @@ from scraper.book_scraper import scrapbook, download_image
 from scraper.category_scraper import books_category_scrap
 from scraper.all_scraper import all_category
 
+
 def main():
+    """Script principal : récupère les données et images pour chaque livre."""
     categories = all_category("https://books.toscrape.com/")
 
     for category_name, category_url in categories:
         book_urls = books_category_scrap(category_url)
 
-        with open(f"data/{category_name.lower()}.csv", mode="w", newline="", encoding="utf-8") as file:
+        csv_filename = f"data/{category_name.lower()}.csv"
+        with open(csv_filename, mode="w", newline="", encoding="utf-8") as file:
             fieldnames = [
                 "title", "price", "price_incl", "price_excl", "stock",
                 "rating", "description", "category", "upc", "image_url"
@@ -21,15 +24,15 @@ def main():
 
             for book_url in book_urls:
                 data = scrapbook(book_url)
-                writer.writerow(data)
+                if data:
+                    writer.writerow(data)
 
-                # ➕ Téléchargement de l'image
-                image_filename = f"{data['upc']}.jpg"
-                download_image(
-                    image_url=data["image_url"],
-                    filename=f"{data['upc']}.jpg",
-                    category=data["category"]
-                )
+                    image_filename = f"{data['upc']}.jpg"
+                    download_image(
+                        image_url=data["image_url"],
+                        filename=image_filename,
+                        category=data["category"]
+                    )
 
 
 if __name__ == "__main__":
