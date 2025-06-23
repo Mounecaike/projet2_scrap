@@ -1,3 +1,4 @@
+import os
 import csv
 import requests
 from bs4 import BeautifulSoup
@@ -8,6 +9,10 @@ from scraper.all_scraper import all_category
 
 def main():
     """Main script: Retrieves data and images for each book."""
+    # Ensure required folders exist
+    os.makedirs("data", exist_ok=True)
+    os.makedirs("images", exist_ok=True)
+
     categories = all_category("https://books.toscrape.com/")
 
     for category_name, category_url in categories:
