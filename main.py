@@ -7,7 +7,7 @@ from scraper.all_scraper import all_category
 
 
 def main():
-    """Script principal : récupère les données et images pour chaque livre."""
+    """Main script: Retrieves data and images for each book."""
     categories = all_category("https://books.toscrape.com/")
 
     for category_name, category_url in categories:

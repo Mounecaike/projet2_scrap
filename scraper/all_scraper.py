@@ -3,11 +3,11 @@ from bs4 import BeautifulSoup
 
 
 def all_category(url_general):
-    """Récupère toutes les catégories de livres depuis la page d'accueil."""
+    """Retrieve all book categories from the home page."""
     response = requests.get(url_general)
 
     if response.status_code != 200:
-        print("Erreur lors du chargement de la page", response.status_code)
+        print("Error loading page", response.status_code)
         return []
 
     soup = BeautifulSoup(response.content, "html.parser")

@@ -4,10 +4,10 @@ from bs4 import BeautifulSoup
 
 
 def scrapbook(url):
-    """Extrait toutes les informations d'un livre à partir de son URL."""
+    """Extracts all information about a book from its URL."""
     response = requests.get(url)
     if response.status_code != 200:
-        print("Erreur lors du chargement de la page", response.status_code)
+        print("Error loading page", response.status_code)
         return None
 
     soup = BeautifulSoup(response.content, "html.parser")
@@ -46,7 +46,7 @@ def scrapbook(url):
 
 
 def download_image(image_url, filename, category, folder="images"):
-    """Télécharge l'image d'un livre dans un sous-dossier par catégorie."""
+    """Uploads a book image to a subfolder by category."""
     category_folder = os.path.join(folder, category.lower().replace(" ", "_"))
     os.makedirs(category_folder, exist_ok=True)
 
@@ -59,4 +59,4 @@ def download_image(image_url, filename, category, folder="images"):
                 for chunk in response.iter_content(1024):
                     file.write(chunk)
     except Exception as e:
-        print(f"Erreur lors du téléchargement de {image_url} : {e}")
+        print(f"Error downloading {image_url} : {e}")
