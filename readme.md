@@ -1,6 +1,5 @@
 # 📚 Web Scraping Project - Books to Scrape
 
-This project was built as part of the OpenClassrooms Python Developer training.
 
 It allows you to:
 - Scrape all categories from the [Books to Scrape](https://books.toscrape.com) website  
