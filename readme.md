@@ -1,35 +1,36 @@
-# 📚 Projet de Web Scraping - Books to Scrape
+# 📚 Web Scraping Project - Books to Scrape
 
-Ce projet a été réalisé dans le cadre de la formation Développeur d’application Python (OpenClassrooms).
+This project was built as part of the OpenClassrooms Python Developer training.
 
-Il permet de :
-- Scraper toutes les catégories du site [Books to Scrape](https://books.toscrape.com)
-- Extraire les données de chaque livre (titre, prix, stock, description, etc.)
-- Télécharger les images associées
-- Générer un fichier CSV par catégorie dans le dossier `/data`
-- Sauvegarder les images dans le dossier `/images`
+It allows you to:
+- Scrape all categories from the [Books to Scrape](https://books.toscrape.com) website  
+- Extract data from each book (title, price, stock, description, etc.)  
+- Download the associated images  
+- Generate one CSV file per category in the `/data` folder  
+- Save images in the `/images` folder  
 
 ---
 
-## 🛠 Technologies utilisées
+## 🛠 Technologies Used
 
-- Python 3.x
-- `requests`
-- `beautifulsoup4`
-- `csv` (librairie standard Python)
+- Python 3.x  
+- `requests`  
+- `beautifulsoup4`  
+- `csv` (Python standard library)  
 
 ---
 
 ## 📦 Installation
 
-1. Clone ce dépôt ou télécharge-le en `.zip`
+1. Clone this repository or download it as a `.zip`:
 
 ```bash
-git clone https://github.com/votre-nom-utilisateur/nom-du-repo.git
-cd nom-du-repo
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+
 ```
 
-2. Installe les dépendances avec `pip` :
+2. Install the dependencies using pip :
 
 ```bash
 pip install -r requirements.txt
@@ -37,15 +38,15 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Mise en route
+## 🚀 Getting Started
 
-### 1. Créer un environnement virtuel (recommandé)
+### 1. Create a virtual environment (recommended)
 
 ```bash
 python -m venv venv
 ```
 
-### 2. Activer l’environnement virtuel
+### 2. Activate the virtual environment
 
 - **Windows** :
 
@@ -59,30 +60,31 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### 3. Lancer le scraping complet
+### 3. Run the full scraping process
 
 ```bash
 python main.py
 ```
 
-Les fichiers CSV générés seront enregistrés dans le dossier `data/`  
-Les images seront téléchargées dans le dossier `images/`
+The generated CSV files will be saved in the data/ folder
+The images will be downloaded into the images/ folder
 
 ---
 
 
-## 📁 Structure du projet
+## 📁 Project Structure
 
 ```
-📦 projet/
-├── main.py                  # Point d’entrée principal
+📦 project/
+├── main.py                  # Main entry point
 ├── scraper/
 │   ├── __init__.py
-│   ├── all_scraper.py       # Fonction all_category()
-│   ├── book_scraper.py      # Fonction scrapbook() + download_image()
-│   └── category_scraper.py  # Fonction books_category_scrap()
-├── data/                    # Dossiers des fichiers CSV (générés)
-├── images/                  # Dossiers des images téléchargées (générés)
-├── requirements.txt         # Dépendances du projet
+│   ├── all_scraper.py       # Function all_category()
+│   ├── book_scraper.py      # Function scrapbook() + download_image()
+│   └── category_scraper.py  # Function books_category_scrap()
+├── data/                    # Folder for generated CSV files
+├── images/                  # Folder for downloaded images
+├── requirements.txt         # Project dependencies
 └── README.md
+
 ```
